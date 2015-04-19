@@ -263,8 +263,8 @@
   // ---- socket ------
   // create socket
   var socketReady = false;
-  var port = 9001;
-  var socket = io.connect(location.origin + ":" + port);
+  var port = 5000;
+  var socket = io.connect(location.origin);
   // socket: channel connected
   socket.on('connect', onOpened)
         .on('message', onMessage);

@@ -63,6 +63,16 @@ server.listen(port);
 
 console.log((new Date()) + " Server is listening on port " + port);
 
+//設定   
+io.configure(function () {
+   //HerokuではWebSocketがまだサポートされていない？ので、以下の設定が必要
+    io.set("transports", ["xhr-polling"]);
+    io.set("polling duration", 10);
+
+    // socket.ioのログ出力を抑制する
+    io.set('log level', 1);
+});
+
 io.on('connection', function(socket) {
   // 入室
   socket.on('enter', function(roomname) {

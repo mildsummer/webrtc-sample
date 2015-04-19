@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>WebRTC 1 to 1 handshake</title>
-  <script src="socket.io/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
   <button type="button" onclick="startVideo();">Start video</button>
@@ -263,8 +263,7 @@
   // ---- socket ------
   // create socket
   var socketReady = false;
-  var port = 9001;
-  var socket = io.connect('http://localhost:' + port + '/');
+  var socket = io.connect();
   // socket: channel connected
   socket.on('connect', onOpened)
         .on('message', onMessage);

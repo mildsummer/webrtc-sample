@@ -58,20 +58,20 @@ app.use(function(err, req, res, next) {
 });
 
 var port = 5000;
-var io = require('socket.io')(server);
+var io = require('socket.io')(server, {"transports": ["xhr-polling"], "polling duration": 10});
 server.listen(port);
 
 console.log((new Date()) + " Server is listening on port " + port);
 
-//設定   
-io.configure(function () {
-   //HerokuではWebSocketがまだサポートされていない？ので、以下の設定が必要
-    io.set("transports", ["xhr-polling"]);
-    io.set("polling duration", 10);
-
-    // socket.ioのログ出力を抑制する
-    io.set('log level', 1);
-});
+//設定
+// io.configure(function () {
+//    //HerokuではWebSocketがまだサポートされていない？ので、以下の設定が必要
+//     io.set("transports", ["xhr-polling"]);
+//     io.set("polling duration", 10);
+//
+//     // socket.ioのログ出力を抑制する
+//     io.set('log level', 1);
+// });
 
 io.on('connection', function(socket) {
   // 入室

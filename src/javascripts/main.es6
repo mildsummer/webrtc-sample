@@ -136,7 +136,7 @@ class WebRTCConnector {
         return peer;
     }
 
-    
+
     onOffer(evt) {
         console.log("Received offer...")
         console.log(evt);

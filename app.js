@@ -58,7 +58,7 @@ app.use(function(err, req, res, next) {
 });
 
 var port = 5000;
-var io = require('socket.io')(server);
+var io = require('socket.io').listen(server);
 server.listen(port);
 
 console.log((new Date()) + " Server is listening on port " + port);

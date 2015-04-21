@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>WebRTC 1 to 1 handshake</title>
-  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
   <button id="start-button" type="button">Start video</button>
@@ -15,6 +14,8 @@
    <video id="local-video" autoplay style="width: 240px; height: 180px; border: 1px solid black;"></video>
    <video id="remote-video" autoplay style="width: 240px; height: 180px; border: 1px solid black;"></video>
   </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/WebRTCConnector.js"></script>
   <script src="/javascripts/main.js"></script>
 </body>
 </html>

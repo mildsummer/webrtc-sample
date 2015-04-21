@@ -57,11 +57,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = 5000;
+var port = process.env.PORT || '3000';
 var io = require('socket.io').listen(server);
-
-io.set('transports', ['xhr-polling']);
-io.set('polling duration', 10);
 
 server.listen(port);
 
